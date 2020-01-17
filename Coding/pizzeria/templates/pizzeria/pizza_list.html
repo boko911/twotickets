@@ -1,0 +1,30 @@
+{% extends 'pizzeria/base.html' %}
+{% block content %}
+    <form action="{% url 'create_order' %}" method="post">
+        {% csrf_token %}
+        {% for pizza in pizza_list %}
+        <div class="form-group border text-center">
+            <div>
+            <input type="radio" name="pizza_name" value="{{ pizza.pizza_name }}" required> {{ pizza.pizza_name }}
+            {% for size in pizza.size %}
+                <input type="radio" name="size" value="{{ size }}" required> {{ size }}
+            {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+        <div class="form-group text-center">
+            <label for="customer_name">Name :</label>
+            <input id="customer_name" type="text" name="customer_name" placeholder="Your name" required>
+            <label for="email">Email :</label>
+            <input id="email" type="email" name="email" placeholder="Your email" required>
+            <label for="phone_number">Phone :</label>
+            <input id="phone_number" type="number" name="phone_number" placeholder="Your phone number" required>
+        </div>
+        <div class="form-group text-center ">
+            <button type="submit">ORDER</button>
+        </div>
+    </form>
+{% endblock %}
+
+

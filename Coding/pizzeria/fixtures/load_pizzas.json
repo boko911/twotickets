@@ -1,0 +1,26 @@
+[
+    {
+        "model": "pizzeria.pizza",
+        "pk": 1,
+        "fields": {
+            "pizza_name": "Margarita",
+            "size" : ["Medium", "Large"]
+        }
+    },
+    {
+        "model": "pizzeria.pizza",
+        "pk": 2,
+        "fields": {
+            "pizza_name": "Diavolo",
+            "size" : ["Small", "Medium", "Large"]
+        }
+    },
+    {
+        "model": "pizzeria.pizza",
+        "pk": 3,
+        "fields": {
+            "pizza_name": "Salami",
+            "size" : ["Small", "Medium", "Large"]
+        }
+    }
+]

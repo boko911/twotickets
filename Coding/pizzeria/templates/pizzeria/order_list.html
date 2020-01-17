@@ -1,0 +1,24 @@
+{% extends 'pizzeria/base.html' %}
+{% block content %}
+<div class="text-center">
+    <form method="get">
+        {% csrf_token %}
+        <br>
+        <input id="input" type="text" name='customer_name' placeholder="Order by name / email">
+        <button type="submit">Search</button>
+    </form>
+</div>
+<br>
+<ul>
+{% for order in filter.qs %}
+    <div class="border">
+        <div>Order number : {{ order.id }}</div>
+        <div>Order : {{ order.pizza_name }} - Size : {{ order.size }}</div>
+        <div>Name  : {{ order.customer_name }}</div>
+        <div>Email : {{ order.email }}</div>
+        <div>Phone : {{ order.phone_number }}</div>
+    </div>
+    <br>
+{% endfor %}
+</ul>
+{% endblock %}
